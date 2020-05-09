@@ -40,6 +40,9 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                   .and()
                   .formLogin()
                   .loginPage("/login").permitAll()
+                  .defaultSuccessUrl("/courses", true)
+                  .and()
+                  .rememberMe(); //default 2 weeks
     }
 
     //Retrieve users from database.
